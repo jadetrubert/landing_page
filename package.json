@@ -1,0 +1,13 @@
+{
+  "name": "landing_page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page EBAC com automação via Gulp",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "^5.0.0"
+  }
+}
