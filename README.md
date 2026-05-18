@@ -8,6 +8,13 @@ Landing page responsiva da **Serra Viva Expedições**, criada para o exercício
 - CSS3
 - JavaScript
 
-## Publicação recomendada
+## Plataforma escolhida para deploy
 
-A estrutura está pronta para deploy estático em **Vercel**, **Netlify**, **GitHub Pages** ou **Cloudflare Pages**.
+**Vercel**
+
+Passo a passo rápido:
+
+1. Acesse o dashboard da Vercel.
+2. Importe o repositório `jadetrubert/landing_page`.
+3. Mantenha as configurações padrão de projeto estático.
+4. Clique em **Deploy**.
