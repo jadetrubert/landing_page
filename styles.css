@@ -1,0 +1,319 @@
+:root {
+  --bg: #f7f3e9;
+  --surface: #fff8ee;
+  --text: #1d2f32;
+  --muted: #567173;
+  --accent: #e35d2f;
+  --accent-dark: #b64724;
+  --secondary: #0f766e;
+  --stroke: #d9c8ad;
+  --shadow: 0 16px 40px rgba(21, 39, 41, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page-glow {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 10% 10%, #ffd7b7 0%, transparent 38%),
+    radial-gradient(circle at 80% 30%, #b9efe8 0%, transparent 30%),
+    radial-gradient(circle at 50% 90%, #ffefcd 0%, transparent 25%);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+main,
+.topbar,
+.footer {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.topbar {
+  align-items: center;
+  background: rgba(255, 248, 238, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(217, 200, 173, 0.5);
+  border-radius: 999px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.2rem;
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
+}
+
+.brand {
+  color: var(--text);
+  font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+}
+
+.menu a {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn {
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.75rem 1.3rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-small {
+  font-size: 0.85rem;
+  padding: 0.55rem 1rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  background: rgba(29, 47, 50, 0.07);
+  border-color: var(--text);
+}
+
+.hero {
+  padding: 6rem 0 4rem;
+}
+
+.tagline {
+  color: var(--secondary);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  font-size: clamp(2rem, 6vw, 4.1rem);
+  line-height: 1.05;
+  margin: 0.8rem 0 1.2rem;
+  max-width: 16ch;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 60ch;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.section {
+  margin-top: 4.5rem;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  color: var(--secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height: 1.2;
+  margin-top: 0.5rem;
+  max-width: 28ch;
+}
+
+.route-grid,
+.benefits-grid,
+.quotes {
+  display: grid;
+  gap: 1rem;
+}
+
+.route-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.route-card {
+  background: linear-gradient(150deg, #fffefb, #fff3e1);
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 1.3rem;
+  transition: transform 0.22s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-4px) rotate(-0.4deg);
+}
+
+.route-card h3 {
+  font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  font-size: 1.35rem;
+}
+
+.route-card p {
+  color: var(--muted);
+  margin: 0.8rem 0;
+}
+
+.route-card span {
+  color: var(--secondary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.highlight {
+  background: #fff9ef;
+  border: 1px solid var(--stroke);
+  border-radius: 22px;
+  padding: 1.3rem;
+}
+
+.benefits-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.benefits-grid article {
+  background: #fff;
+  border: 1px solid rgba(217, 200, 173, 0.8);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.benefits-grid h3 {
+  font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  margin-bottom: 0.4rem;
+}
+
+.benefits-grid p,
+blockquote {
+  color: var(--muted);
+}
+
+.quotes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+blockquote {
+  background: #fff;
+  border: 1px solid rgba(217, 200, 173, 0.8);
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+
+cite {
+  color: var(--text);
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 0.7rem;
+}
+
+.cta {
+  align-items: flex-start;
+  background: linear-gradient(130deg, #f5decc, #d8f2ec);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.8rem;
+}
+
+.cta p {
+  color: var(--muted);
+}
+
+.footer {
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding: 2rem 0;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 920px) {
+  .route-grid,
+  .benefits-grid,
+  .quotes {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    border-radius: 16px;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    justify-content: center;
+  }
+
+  .menu {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero {
+    padding-top: 4rem;
+  }
+}
