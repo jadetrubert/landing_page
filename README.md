@@ -5,7 +5,7 @@ Landing page responsiva da **Serra Viva Expedições**, criada para o exercício
 ## Tecnologias
 
 - HTML5
-- CSS3
+- LESS
 - JavaScript
 - Gulp
 
@@ -28,3 +28,9 @@ npm run build
 ```bash
 npm run dev
 ```
+
+## Estrutura dos estilos
+
+- `src/styles/config`: variáveis, mapas e valores reutilizáveis
+- `src/styles/mixins`: mixins e media query helper
+- `src/styles/base`, `layout`, `components` e `sections`: arquivos divididos por responsabilidade

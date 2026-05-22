@@ -1,0 +1,134 @@
+.section {
+  margin-top: 4.5rem;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  color: @colors[secondary];
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  .font-display();
+  font-size: @section-title-size;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+  max-width: 28ch;
+}
+
+.route-grid,
+.benefits-grid,
+.quotes {
+  display: grid;
+  gap: 1rem;
+}
+
+.route-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.route-card {
+  background: linear-gradient(150deg, @colors[route-start], @colors[route-end]);
+  .card-surface();
+  padding: 1.3rem;
+  transition: transform 0.22s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-4px) rotate(-0.4deg);
+}
+
+.route-card h3 {
+  .font-display();
+  font-size: 1.35rem;
+}
+
+.route-card p {
+  color: @colors[muted];
+  margin: 0.8rem 0;
+}
+
+.route-card span {
+  color: @colors[secondary];
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.highlight {
+  background: @colors[highlight-bg];
+  border: 1px solid @colors[stroke];
+  border-radius: 22px;
+  padding: 1.3rem;
+}
+
+.benefits-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.benefits-grid article {
+  background: @colors[white];
+  border: 1px solid @card-border;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.benefits-grid h3 {
+  .font-display();
+  margin-bottom: 0.4rem;
+}
+
+.benefits-grid p,
+blockquote {
+  color: @colors[muted];
+}
+
+.quotes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+blockquote {
+  background: @colors[white];
+  border: 1px solid @card-border;
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+
+cite {
+  color: @colors[text];
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 0.7rem;
+}
+
+.cta {
+  align-items: flex-start;
+  background: linear-gradient(130deg, @colors[cta-start], @colors[cta-end]);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.8rem;
+}
+
+.cta p {
+  color: @colors[muted];
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

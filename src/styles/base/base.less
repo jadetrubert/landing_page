@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: @colors[bg];
+  color: @colors[text];
+  .font-body();
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page-glow {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 10%, @colors[glow-peach] 0%, transparent 38%),
+    radial-gradient(circle at 80% 30%, @colors[glow-mint] 0%, transparent 30%),
+    radial-gradient(circle at 50% 90%, @colors[glow-cream] 0%, transparent 25%);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+main,
+.topbar,
+.footer {
+  .container();
+}

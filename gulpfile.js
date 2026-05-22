@@ -1,9 +1,14 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const { rm } = require('node:fs/promises');
+const less = require('gulp-less');
 
 const paths = {
   html: 'index.html',
-  styles: 'styles.css',
+  styles: {
+    entry: 'src/styles/styles.less',
+    watch: 'src/styles/**/*.less',
+    output: 'styles.css'
+  },
   scripts: 'script.js',
   assets: 'assets/**/*'
 };
@@ -16,8 +21,14 @@ function copyHtml() {
   return src(paths.html).pipe(dest('dist'));
 }
 
-function copyStyles() {
-  return src(paths.styles).pipe(dest('dist'));
+function copyCompiledStyles() {
+  return src(paths.styles.output).pipe(dest('dist'));
+}
+
+function compileStyles() {
+  return src(paths.styles.entry, { base: 'src/styles' })
+    .pipe(less())
+    .pipe(dest('.'));
 }
 
 function copyScripts() {
@@ -28,13 +39,10 @@ function copyAssets() {
   return src(paths.assets, { allowEmpty: true }).pipe(dest('dist/assets'));
 }
 
-const build = series(cleanDist, parallel(copyHtml, copyStyles, copyScripts, copyAssets));
+const build = series(cleanDist, compileStyles, parallel(copyHtml, copyCompiledStyles, copyScripts, copyAssets));
 
 function watchFiles() {
-  watch(
-    [paths.html, paths.styles, paths.scripts, paths.assets],
-    build
-  );
+  watch([paths.html, paths.styles.watch, paths.scripts, paths.assets], build);
 }
 
 exports.clean = cleanDist;

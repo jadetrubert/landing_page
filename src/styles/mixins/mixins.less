@@ -1,0 +1,32 @@
+.container() {
+  width: @container-width;
+  margin: 0 auto;
+}
+
+.font-display() {
+  font-family: @fonts[display];
+}
+
+.font-body() {
+  font-family: @fonts[body];
+}
+
+.button-variant(@background; @border; @text) {
+  background: @background;
+  border: 2px solid @border;
+  color: @text;
+}
+
+.card-surface(@radius: 20px) {
+  border: 1px solid @colors[stroke];
+  border-radius: @radius;
+  box-shadow: @shadow;
+}
+
+.respond(@key; @rules) {
+  @breakpoint: @breakpoints[@key];
+
+  @media (max-width: @breakpoint) {
+    @rules();
+  }
+}

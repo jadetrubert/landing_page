@@ -8,6 +8,8 @@
     "dev": "gulp"
   },
   "devDependencies": {
-    "gulp": "^5.0.0"
+    "gulp": "^5.0.0",
+    "gulp-less": "^5.0.0",
+    "less": "^4.4.2"
   }
 }
