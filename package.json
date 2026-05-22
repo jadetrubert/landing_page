@@ -2,12 +2,15 @@
   "name": "landing_page",
   "version": "1.0.0",
   "private": true,
-  "description": "Landing page EBAC com automação via Gulp",
+  "description": "Landing page EBAC com automação via Grunt",
   "scripts": {
-    "build": "gulp build",
-    "dev": "gulp"
+    "build": "grunt",
+    "dev": "grunt"
   },
   "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
     "gulp": "^5.0.0",
     "gulp-less": "^5.0.0",
     "less": "^4.4.2"

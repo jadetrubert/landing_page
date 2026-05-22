@@ -7,9 +7,9 @@ Landing page responsiva da **Serra Viva Expedições**, criada para o exercício
 - HTML5
 - LESS
 - JavaScript
-- Gulp
+- Grunt
 
-## Automação com Gulp
+## Automação com Grunt
 
 1. Instale as dependências:
 
@@ -17,16 +17,10 @@ Landing page responsiva da **Serra Viva Expedições**, criada para o exercício
 npm install
 ```
 
-2. Gere a versão de build em `dist/`:
+2. Compile o LESS e comprima o JavaScript:
 
 ```bash
 npm run build
-```
-
-3. Modo desenvolvimento (watch):
-
-```bash
-npm run dev
 ```
 
 ## Estrutura dos estilos
